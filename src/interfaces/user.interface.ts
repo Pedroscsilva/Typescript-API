@@ -1,4 +1,4 @@
-interface User { 
+export interface User { 
   id?: number;
   username: string;
   vocation: string;
@@ -6,4 +6,12 @@ interface User {
   password: string;
 }
 
-export default User;
+export interface UserLogin {
+  username: string;
+  password: string;
+}
+
+export interface LoginReturn {
+  username: string;
+  id: number;
+}

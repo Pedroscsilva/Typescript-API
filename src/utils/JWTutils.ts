@@ -1,18 +1,17 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import User from '../interfaces/user.interface';
+import { LoginReturn, User } from '../interfaces/user.interface';
 
 dotenv.config();
 
 const TOKEN_SECRET = process.env.JWT_SECRET || 'secret';
 
-const generateToken = (payload: User) => 
+export const generateToken = (payload: User | LoginReturn) => 
   jwt.sign(payload, TOKEN_SECRET, {
     algorithm: 'HS256',
     expiresIn: '7d',
   });
 
-export default generateToken;
 // export const authenticateToken = (token:string) => {
 //   if (!token) {
 //     const error = new Error('Token not found');
@@ -30,7 +29,7 @@ export default generateToken;
 //   }
 // };
 
-// export const decodeToken = (token:string):User => {
-//   const payload = jwt.decode(token);
-//   return payload;
-// };
+export const decodeToken = (token:string) => {
+  const payload = jwt.decode(token);
+  return payload;
+};

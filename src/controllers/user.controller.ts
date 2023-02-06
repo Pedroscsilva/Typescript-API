@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import UserService from '../services/user.service';
 
-export default class ProductController {
+export default class UserController {
   private userService: UserService;
 
   constructor() {

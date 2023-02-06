@@ -1,8 +1,8 @@
 export default class ErrorWithStatus extends Error {
   public status: number;
 
-  constructor(status: number) {
-    super();
+  constructor(message: string, status: number) {
+    super(message);
     this.status = status;
   }
 }

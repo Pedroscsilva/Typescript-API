@@ -1,7 +1,7 @@
 import connection from '../models/connection';
 import UserModel from '../models/user.model';
-import User from '../interfaces/user.interface';
-import generateToken from '../utils/JWTutils';
+import { User } from '../interfaces/user.interface';
+import { generateToken } from '../utils/JWTutils';
 
 export default class UserService {
   public model: UserModel;
