@@ -8,8 +8,12 @@ export default class ProductService {
   constructor() {
     this.model = new ProductModel(connection);
   }
-  
+
   public create(product: Product): Promise<Product> {
     return this.model.create(product);
+  }
+
+  public getAll(): Promise<Product[]> {
+    return this.model.getAll();
   }
 }
