@@ -9,7 +9,11 @@ export default class UserController {
   }
 
   public async create(req: Request, res: Response) {
-    const token = await this.userService.create(req.body);
-    res.status(201).json(token);
+    try {
+      const token = await this.userService.create(req.body);
+      res.status(201).json({ token });      
+    } catch (error) {
+      res.status(error.status).json({ message: error.message });
+    }
   }
 }
