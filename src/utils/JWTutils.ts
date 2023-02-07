@@ -6,11 +6,13 @@ dotenv.config();
 
 const TOKEN_SECRET = process.env.JWT_SECRET || 'secret';
 
-export const generateToken = (payload: User | LoginReturn) => 
+const generateToken = (payload: User | LoginReturn) => 
   jwt.sign(payload, TOKEN_SECRET, {
     algorithm: 'HS256',
     expiresIn: '7d',
   });
+
+export default generateToken;
 
 // export const authenticateToken = (token:string) => {
 //   if (!token) {
@@ -29,7 +31,7 @@ export const generateToken = (payload: User | LoginReturn) =>
 //   }
 // };
 
-export const decodeToken = (token:string) => {
-  const payload = jwt.decode(token);
-  return payload;
-};
+// export const decodeToken = (token:string) => {
+//   const payload = jwt.decode(token);
+//   return payload;
+// };

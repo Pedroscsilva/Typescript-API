@@ -9,12 +9,20 @@ export default class ProductController {
   }
 
   public async create(req: Request, res: Response) {
-    const productCreated = await this.productService.create(req.body);
-    res.status(201).json(productCreated);
+    try {
+      const productCreated = await this.productService.create(req.body);
+      res.status(201).json(productCreated);
+    } catch (error) {
+      res.status(error.status).json({ message: error.message });
+    }
   }
 
   public async getAll(_req: Request, res: Response) {
-    const allProducts = await this.productService.getAll();
-    res.status(200).json(allProducts);
+    try {
+      const allProducts = await this.productService.getAll();
+      res.status(200).json(allProducts);
+    } catch (error) {
+      res.status(error.status).json({ message: error.message });
+    }
   }
 }
