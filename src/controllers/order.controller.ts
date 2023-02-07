@@ -12,4 +12,14 @@ export default class OrderController {
     const allOrders = await this.orderService.getAll();
     res.status(200).json(allOrders);
   }
+
+  public async addOrder(req: Request, res: Response) {
+    try {
+      const createdOrder = await this.orderService
+        .addOrder(req.headers.authorization as string, req.body.productsIds);
+      res.status(201).json(createdOrder);
+    } catch (error) {
+      res.status(error.status).json({ message: error.message });
+    }
+  }
 }

@@ -16,3 +16,8 @@ export const userSchema = Joi.object({
   level: Joi.number().min(1).required(),
   password: Joi.string().min(8).required(),
 });
+
+export const productIdsSchema = Joi.object({
+  productsIds: Joi.array().items(Joi.number().required()).required()
+    .messages({ 'array.includesRequiredUnknowns': '"productsIds" must include only numbers' }),
+});

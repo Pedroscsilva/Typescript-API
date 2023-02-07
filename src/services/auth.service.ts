@@ -1,7 +1,7 @@
 import connection from '../models/connection';
 import UserModel from '../models/user.model';
 import { UserLogin } from '../interfaces/user.interface';
-import generateToken from '../utils/JWTutils';
+import { generateToken } from '../utils/JWTutils';
 import { loginSchema } from '../utils/JoiSchemas';
 import ErrorWithStatus from '../utils/ErrorWithStatus';
 
