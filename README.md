@@ -1,13 +1,26 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+## Typescript API
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+This was my first typescript API, made with MySQL2, JWT and Express.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+I really enjoyed constructing it, as it was my first project developed with typescript.
+
+If you want to check it, you can clone this repository. 
+
+Provided you have Docker and docker-compose installed on your machine, you may follow the commands below in your terminal to see the API working:
+
+```sh
+$ docker-compose up -d
+$ docker exec -it trybesmith bash
+```
+
+It should open the bash version of the newly created container. After that, you can install the project's node_modules and start the API.
+
+```sh
+$ npm install
+$ npm start
+```
+
+If you would like any help executing it or if you have any suggestion on how to improve this code, please reach me out!
+
+pedroscsilva2001@gmail.com
++55 24 99243-3741
